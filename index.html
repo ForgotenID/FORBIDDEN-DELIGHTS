@@ -1,0 +1,1225 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Forbidden Delights</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fff8f1;
+      color: #321b1b;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 18px 7%;
+
+      background: #321b1b;
+      color: white;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav .links {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      color: #e9a3a3;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 700px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      padding: 80px 20px;
+
+      background:
+        linear-gradient(rgba(50,27,27,.65), rgba(50,27,27,.65)),
+        url("image.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 7rem);
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-style: italic;
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    .diet-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .diet-tags span {
+      border: 1px solid white;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: .85rem;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+
+      background: #d77d7d;
+      color: white;
+
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1px;
+
+      border-radius: 4px;
+      transition: .3s;
+    }
+
+    .button:hover {
+      background: #b85f5f;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      margin-bottom: 45px;
+      color: #725454;
+    }
+
+    /* =========================
+       MENU
+    ========================= */
+
+    #menu {
+      background: #fff8f1;
+    }
+
+    .menu-info {
+      text-align: center;
+      margin-bottom: 45px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .menu-card {
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+
+      box-shadow: 0 8px 25px rgba(50,27,27,.08);
+
+      border-top: 5px solid #d77d7d;
+      transition: .3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(50,27,27,.14);
+    }
+
+    .menu-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    .menu-card p {
+      color: #684e4e;
+    }
+
+    .price {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #a54f4f;
+    }
+
+    .note {
+      margin-top: 10px;
+      font-size: .9rem;
+      font-style: italic;
+    }
+
+    /* =========================
+       HOLIDAY
+    ========================= */
+
+    #holiday {
+      background: #321b1b;
+      color: white;
+    }
+
+    #holiday .section-subtitle {
+      color: #e7cfcf;
+    }
+
+    .holiday-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .holiday-card {
+      padding: 35px;
+      border: 1px solid #765252;
+      border-radius: 12px;
+      background: #422525;
+    }
+
+    .holiday-card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 15px;
+    }
+
+    .holiday-card p {
+      color: #eadada;
+    }
+
+    .holiday-price {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #f0aaaa;
+    }
+
+    /* =========================
+       DELIVERY
+    ========================= */
+
+    .delivery-grid {
+      max-width: 1000px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .delivery-card {
+      text-align: center;
+      background: white;
+      padding: 35px 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
+
+    .delivery-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    /* =========================
+       ORDER FORM
+    ========================= */
+
+    #order {
+      background: #f1dfd8;
+    }
+
+    .order-container {
+      max-width: 850px;
+      margin: auto;
+
+      background: white;
+      padding: 45px;
+
+      border-radius: 15px;
+      box-shadow: 0 10px 35px rgba(0,0,0,.1);
+    }
+
+    .order-number {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #a54f4f;
+      font-weight: bold;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+
+      border: 1px solid #cdbbbb;
+      border-radius: 5px;
+
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .product {
+      padding: 18px;
+      margin-bottom: 12px;
+
+      background: #fff8f1;
+      border-radius: 8px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .product-name {
+      flex: 1;
+    }
+
+    .product input {
+      width: 80px;
+    }
+
+    .payment-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .payment-option {
+      padding: 12px;
+      border: 1px solid #d5c2c2;
+      border-radius: 6px;
+    }
+
+    .payment-option input {
+      width: auto;
+      margin-right: 7px;
+    }
+
+    .total-box {
+      margin-top: 30px;
+      padding: 25px;
+
+      background: #321b1b;
+      color: white;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border-radius: 8px;
+    }
+
+    .total {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .submit-button {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+
+      margin-top: 20px;
+      padding: 17px;
+
+      background: #d77d7d;
+      color: white;
+
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+
+      border-radius: 5px;
+    }
+
+    .submit-button:hover {
+      background: #b85f5f;
+    }
+
+    /* =========================
+       SOCIAL
+    ========================= */
+
+    #social {
+      text-align: center;
+      background: #fff8f1;
+    }
+
+    .social-box {
+      max-width: 700px;
+      margin: auto;
+      padding: 50px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    }
+
+    .social-box h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .social-box a {
+      color: #a54f4f;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* =========================
+       OWNER
+    ========================= */
+
+    #admin {
+      background: #321b1b;
+      color: white;
+      text-align: center;
+    }
+
+    .owner-box {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .owner-box h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .owner-box p {
+      margin-bottom: 10px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #201010;
+      color: #e6cccc;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer a {
+      color: #f0aaaa;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav .links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .menu-grid,
+      .holiday-grid,
+      .delivery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .order-container {
+        padding: 25px;
+      }
+
+      .product {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .product input {
+        width: 100%;
+      }
+
+      .payment-options {
+        grid-template-columns: 1fr;
+      }
+
+      .total-box {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav>
+    <div class="nav-logo">FORBIDDEN DELIGHTS</div>
+
+    <div class="links">
+      <a href="#menu">MENU</a>
+      <a href="#order">ORDER</a>
+      <a href="https://www.tiktok.com/@forbidden.delight8" target="_blank">TIKTOK</a>
+      <a href="#admin">OWNER</a>
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <h1>Forbidden Delights</h1>
+
+      <h2>Indulgence<br>Without Limits</h2>
+
+      <div class="diet-tags">
+        <span>GLUTEN-FREE</span>
+        <span>DAIRY-FREE</span>
+        <span>EGG-FREE</span>
+      </div>
+
+      <p>
+        Small-batch treats baked fresh in Manhattan.
+        100% decadent, free from gluten, dairy, and eggs.
+      </p>
+
+      <a class="button" href="#order">
+        PREORDER NOW — MANHATTAN ONLY
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       CONTACT BAR
+  ========================= -->
+
+  <section style="padding: 25px; text-align:center; background:#ead2cc;">
+    <strong>mom06pages@yahoo.com</strong>
+    &nbsp; | &nbsp;
+    <strong>@forbidden.delight8</strong>
+    &nbsp; | &nbsp;
+    Cash App • Apple Pay • Zelle • One Pay • Square Online
+  </section>
+
+
+  <!-- =========================
+       MENU
+  ========================= -->
+
+  <section id="menu">
+
+    <h2 class="section-title">Current Cravings</h2>
+
+    <p class="menu-info">
+      $10 half dozen • $18 dozen • 48hr advance
+    </p>
+
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <h3>Bourbon Brown Sugar Cookies</h3>
+
+        <p>
+          Brown sugar bourbon infused cookie with toasted pecans.
+        </p>
+
+        <p class="note">
+          Contains nuts • Can be made nut-free
+        </p>
+
+        <span class="price">
+          $10 half dozen • $18 dozen
+        </span>
+      </div>
+
+
+      <div class="menu-card">
+        <h3>Chocolate Chip</h3>
+
+        <p>
+          Classic soft-baked chocolate chip,
+          golden edges, melty center.
+        </p>
+
+        <span class="price">
+          $10 half dozen • $18 dozen
+        </span>
+      </div>
+
+
+      <div class="menu-card">
+        <h3>Strawberry Cookies</h3>
+
+        <p>
+          Pink strawberry-infused cookie topped
+          with delicate sugar glaze.
+        </p>
+
+        <span class="price">
+          $10 half dozen • $18 dozen
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       HOLIDAY TREATS
+  ========================= -->
+
+  <section id="holiday">
+
+    <h2 class="section-title">Holiday Treats</h2>
+
+    <p class="section-subtitle">
+      Sweet treats made for celebrations.
+    </p>
+
+    <div class="holiday-grid">
+
+      <div class="holiday-card">
+
+        <h3>Truffles</h3>
+
+        <p>
+          Cookies & Cream • Red Velvet • Strawberry • Vanilla
+        </p>
+
+        <span class="holiday-price">
+          4/$15 • 8/$28 • 12/$40 • 16/$52 • $4 ea
+        </span>
+
+      </div>
+
+
+      <div class="holiday-card">
+
+        <h3>Cake Pops</h3>
+
+        <p>
+          Cookies & Cream • Red Velvet • Strawberry • Vanilla
+        </p>
+
+        <span class="holiday-price">
+          4/$15 • 8/$28 • 12/$40 • 16/$52 • $4 ea
+        </span>
+
+      </div>
+
+
+      <div class="holiday-card">
+
+        <h3>Chocolate Covered Pretzels</h3>
+
+        <p>
+          One flavour only: Dipped (fully coated) or Drizzled
+        </p>
+
+        <span class="holiday-price">
+          $3.50 ea • 6/$18 • 12/$32 • 18/$45 • 24/$56
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       DELIVERY
+  ========================= -->
+
+  <section>
+
+    <h2 class="section-title">Manhattan Only</h2>
+
+    <div class="delivery-grid">
+
+      <div class="delivery-card">
+
+        <h3>Free Midtown Pickup</h3>
+
+        <p>
+          Address sent after confirmation.
+        </p>
+
+      </div>
+
+
+      <div class="delivery-card">
+
+        <h3>Manhattan Delivery $8 Flat</h3>
+
+        <p>
+          Manhattan only. Same-day before 12pm.
+        </p>
+
+      </div>
+
+
+      <div class="delivery-card">
+
+        <h3>Shipping $12</h3>
+
+        <p>
+          Tri-State, ships Mon-Wed.
+          48hr advance required.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ORDER FORM
+  ========================= -->
+
+  <section id="order">
+
+    <h2 class="section-title">
+      Secure Preorder Form
+    </h2>
+
+    <div class="order-container">
+
+      <h2 style="text-align:center;">Your Order</h2>
+
+      <p class="order-number">
+        Next: #FD-001
+      </p>
+
+
+      <form id="orderForm">
+
+        <div class="form-group">
+          <label for="name">FULL NAME *</label>
+          <input type="text" id="name" required>
+        </div>
+
+
+        <div class="form-group">
+          <label for="phone">PHONE *</label>
+          <input type="tel" id="phone" required>
+        </div>
+
+
+        <div class="form-group">
+          <label for="email">EMAIL *</label>
+          <input type="email" id="email" required>
+        </div>
+
+
+        <div class="form-group">
+          <label for="date">DATE NEEDED *</label>
+          <input type="date" id="date" required>
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="fulfillment">
+            FULFILLMENT *
+          </label>
+
+          <select id="fulfillment" required>
+
+            <option value="">
+              Select fulfillment
+            </option>
+
+            <option value="pickup">
+              Manhattan Pickup — FREE
+            </option>
+
+            <option value="delivery">
+              Manhattan Delivery — $8
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <label>YOUR TREATS</label>
+
+
+        <div class="product">
+
+          <div class="product-name">
+            <strong>Bourbon Brown Sugar</strong><br>
+            $10 Half / $18 Doz
+          </div>
+
+          <input
+            type="number"
+            min="0"
+            value="0"
+            data-price="10"
+            class="quantity"
+          >
+
+        </div>
+
+
+        <div class="product">
+
+          <div class="product-name">
+            <strong>Chocolate Chip</strong><br>
+            $10 Half / $18 Doz
+          </div>
+
+          <input
+            type="number"
+            min="0"
+            value="0"
+            data-price="10"
+            class="quantity"
+          >
+
+        </div>
+
+
+        <div class="product">
+
+          <div class="product-name">
+            <strong>Strawberry Cookies</strong><br>
+            Strawberry Cookie + Sugar Glaze<br>
+            $10 Half / $18 Doz
+          </div>
+
+          <input
+            type="number"
+            min="0"
+            value="0"
+            data-price="10"
+            class="quantity"
+          >
+
+        </div>
+
+
+        <div class="product">
+
+          <div class="product-name">
+            <strong>Truffles</strong><br>
+            4/$15 • 8/$28 • 12/$40 • 16/$52 • $4 ea
+          </div>
+
+          <input
+            type="number"
+            min="0"
+            value="0"
+            data-price="15"
+            class="quantity"
+          >
+
+        </div>
+
+
+        <div class="product">
+
+          <div class="product-name">
+            <strong>Cake Pops</strong><br>
+            4/$15 • 8/$28 • 12/$40 • 16/$52 • $4 ea
+          </div>
+
+          <input
+            type="number"
+            min="0"
+            value="0"
+            data-price="15"
+            class="quantity"
+          >
+
+        </div>
+
+
+        <div class="product">
+
+          <div class="product-name">
+            <strong>Chocolate Covered Pretzels</strong><br>
+            $3.50 ea • 6/$18 • 12/$32 • 18/$45 • 24/$56
+          </div>
+
+          <input
+            type="number"
+            min="0"
+            value="0"
+            data-price="3.50"
+            class="quantity"
+          >
+
+        </div>
+
+
+        <!-- PAYMENT -->
+
+        <div class="form-group">
+
+          <label>
+            PAYMENT METHOD *
+          </label>
+
+          <div class="payment-options">
+
+            <label class="payment-option">
+              <input type="radio" name="payment" required>
+              Cash App
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="payment">
+              Apple Pay
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="payment">
+              Zelle
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="payment">
+              One Pay
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="payment">
+              Square Online (Card)
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <!-- NOTES -->
+
+        <div class="form-group">
+
+          <label for="notes">
+            NOTES / ALLERGIES
+          </label>
+
+          <textarea
+            id="notes"
+            placeholder="Tell us about allergies, special requests, or anything else we should know."
+          ></textarea>
+
+        </div>
+
+
+        <!-- TOTAL -->
+
+        <div class="total-box">
+
+          <strong>TOTAL</strong>
+
+          <span class="total">
+            $<span id="total">0.00</span>
+          </span>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="submit-button"
+        >
+          PLACE SECURE ORDER
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TIKTOK
+  ========================= -->
+
+  <section id="social">
+
+    <div class="social-box">
+
+      <h2>Scan to Follow</h2>
+
+      <p>
+        Follow Forbidden Delights on TikTok
+      </p>
+
+      <br>
+
+      <a
+        href="https://www.tiktok.com/@forbidden.delight8"
+        target="_blank"
+      >
+        TikTok @forbidden.delight8
+      </a>
+
+      <br><br>
+
+      <p>
+        mom06pages@yahoo.com • Manhattan Only
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       OWNER
+  ========================= -->
+
+  <section id="admin">
+
+    <div class="owner-box">
+
+      <h2>Owner</h2>
+
+      <p>
+        Forbidden Delights
+      </p>
+
+      <p>
+        Small-batch treats made fresh in Manhattan.
+      </p>
+
+      <p>
+        Questions or orders:
+        <strong>mom06pages@yahoo.com</strong>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <p>
+      © Forbidden Delights • GF/DF/EF
+    </p>
+
+    <p>
+      <a href="#admin">
+        Owner Dashboard
+      </a>
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    const quantities =
+      document.querySelectorAll(".quantity");
+
+    const totalDisplay =
+      document.getElementById("total");
+
+    const fulfillment =
+      document.getElementById("fulfillment");
+
+
+    function calculateTotal() {
+
+      let total = 0;
+
+      quantities.forEach(function(input) {
+
+        const quantity =
+          Number(input.value) || 0;
+
+        const price =
+          Number(input.dataset.price);
+
+        total += quantity * price;
+
+      });
+
+
+      if (fulfillment.value === "delivery") {
+        total += 8;
+      }
+
+
+      totalDisplay.textContent =
+        total.toFixed(2);
+
+    }
+
+
+    quantities.forEach(function(input) {
+
+      input.addEventListener(
+        "input",
+        calculateTotal
+      );
+
+    });
+
+
+    fulfillment.addEventListener(
+      "change",
+      calculateTotal
+    );
+
+
+    document
+      .getElementById("orderForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert(
+          "Thank you for your Forbidden Delights preorder! Your order has been received for confirmation."
+        );
+
+      });
+
+
+    calculateTotal();
+
+  </script>
+
+</body>
+</html>
+```
